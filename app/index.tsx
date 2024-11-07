@@ -106,50 +106,9 @@ import {
   Text,
   View,
 } from "react-native";
+import { Link } from "expo-router";
 
 const Separator = () => <View style={styles.separator} />;
-
-export default function Index() {
-  // how to check device's dimensions. OUTPUT: "{"fontScale": 1, "height": 800, "scale": 3, "width": 360}"
-  // console.log(Dimensions.get("screen"));
-
-  return (
-    <SafeAreaView style={[styles.container]}>
-      <View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() =>
-            Alert.alert("ALERT!", "this path is not finished yet :3")
-          }
-        >
-          <Text style={[styles.buttonText]}>CHECK ON YOUR PLANTS</Text>
-        </TouchableOpacity>
-
-        <Text style={styles.text}>
-          Click here to check on your enviroment's temperature and humidity
-          readings from the Enviro attachment!
-        </Text>
-      </View>
-
-      <Separator />
-
-      <View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() =>
-            Alert.alert("ALERT!", "this path is not finished yet :3")
-          }
-        >
-          <Text style={[styles.buttonText]}>PLANT ALMANAC</Text>
-        </TouchableOpacity>
-
-        <Text style={styles.text}>
-          Learn what kinds of plants you can grow indoors!
-        </Text>
-      </View>
-    </SafeAreaView>
-  );
-}
 
 const styles = StyleSheet.create({
   // Used for SafeAreaView.
@@ -177,6 +136,7 @@ const styles = StyleSheet.create({
   // Used to style "buttons"/TouchableOpacity.
   button: {
     justifyContent: "space-around",
+
     backgroundColor: "#505050",
     height: "40%",
     width: "100%",
@@ -193,3 +153,49 @@ const styles = StyleSheet.create({
     fontSize: 44,
   },
 });
+
+export default function Index() {
+  // how to check device's dimensions. OUTPUT: "{"fontScale": 1, "height": 800, "scale": 3, "width": 360}"
+  // console.log(Dimensions.get("screen"));
+  // <Text style={[styles.buttonText]}>CHECK ON YOUR PLANTS</Text>
+  // onPress={() => Alert.alert("ALERT!", "this path is not finished yet :3")
+
+  return (
+    <SafeAreaView style={[styles.container]}>
+      <View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() =>
+            Alert.alert("ALERT!", "this path is not finished yet :3")
+          }
+        >
+          <Link style={[styles.buttonText]} href="/SecondScreen">
+            Go to Second Screen
+          </Link>
+        </TouchableOpacity>
+
+        <Text style={[styles.text]}>
+          Click here to check on your enviroment's temperature and humidity
+          readings from the Enviro attachment!
+        </Text>
+      </View>
+
+      <Separator />
+
+      <View>
+        <TouchableOpacity
+          style={[styles.button]}
+          onPress={() =>
+            Alert.alert("ALERT!", "this path is not finished yet :3")
+          }
+        >
+          <Text style={[styles.buttonText]}>PLANT ALMANAC</Text>
+        </TouchableOpacity>
+
+        <Text style={[styles.text]}>
+          Learn what kinds of plants you can grow indoors!
+        </Text>
+      </View>
+    </SafeAreaView>
+  );
+}
