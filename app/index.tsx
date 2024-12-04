@@ -31,9 +31,7 @@ export default function Index() {
           </Link>
         </TouchableOpacity>
 
-        <Text style={styles.text}>
-          Learn what kinds of plants you can grow indoors!
-        </Text>
+        <Text style={styles.text}>Learn what plants you can grow indoors!</Text>
         <Separator />
       </View>
     </LinearGradient>
@@ -55,8 +53,8 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     color: "#ffffff",
-    marginVertical: 8,
-    fontSize: 16,
+    marginVertical: 15,
+    fontSize: 22,
   },
   separator: {
     marginVertical: 15,
@@ -75,7 +73,7 @@ const styles = StyleSheet.create({
   buttonText: {
     textAlign: "center",
     color: "#000",
-    fontSize: 24,
+    fontSize: 27,
     fontWeight: "bold",
   },
   title: {
